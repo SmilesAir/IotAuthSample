@@ -1,4 +1,3 @@
-# StarterProject
+# Iot clientside auth pipeline
 
-This is a barebones framework for starting a react project with webpack using AWS as the backend
-
+Most basic complete pipeline for secure clientside access to Iot data
