@@ -1,0 +1,22 @@
+{
+    "name": "starterproject",
+    "version": "v0.0.1",
+    "description": "The new FPA Judging System",
+    "homepage": "https://github.com/SmilesAir/StarterProject",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SmilesAir/StarterProject.git"
+    },
+    "author": {
+        "name": "Ryan Young",
+        "email": "ryan@smilesair.com"
+    },
+    "scripts": {
+        "deploy": "sls deploy"
+    },
+    "dependencies": {
+        "aws-sdk": "^2.434.0"
+    },
+    "devDependencies": {}
+}

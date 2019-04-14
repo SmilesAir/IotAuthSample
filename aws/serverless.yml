@@ -19,6 +19,11 @@ provider:
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.TEST_TABLE}"
+    - Effect: Allow
+      Action:
+        - iot:GetThingShadow
+      Resource:
+        - "*"
 
 functions:
   testLambda:
@@ -26,8 +31,14 @@ functions:
     events:
       - http:
           path: handler
-          method: post
+          method: get
           cors: true
+          integration: lambda
+          authorizer:
+            name: authorizer
+            arn: arn:aws:cognito-idp:us-west-2:855556937201:userpool/us-west-2_AIOYTZQ29
+            claims:
+              - email
 
 resources:
   Resources:
